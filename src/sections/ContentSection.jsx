@@ -70,8 +70,8 @@ export const ContentSection = ({showBg, setCursorOver}) => {
       {/* Items */}
       <div className={start ? 'outline' : ""}>
           <motion.div 
-                 initial={{ opacity: 1, x:-100 }}
-                 animate={start ? {x:0} : ''}
+                 initial={{ opacity: 1, scale:0 }}
+                 animate={start ? {scale:1 } : ''}
                  whileHover={{ opacity: [0, 1] }}
                  className={start ? 'items' : ""}  id="about-me"
                  onMouseEnter={() => {
@@ -87,8 +87,8 @@ export const ContentSection = ({showBg, setCursorOver}) => {
       
       <div className={start ? 'outline' : ""}>
           <motion.div 
-                 initial={{ opacity: 1, x:-100 }}
-                 animate={start ? {x:0} : ''}
+                 initial={{ opacity: 1, scale:0 }}
+                 animate={start ? {scale:1} : ''}
                  whileHover={{ opacity: [0, 1] }}
                  className={start ? 'items' : ""} id="work"
                  onMouseEnter={() => {
@@ -103,8 +103,8 @@ export const ContentSection = ({showBg, setCursorOver}) => {
       
       <div className={start ? 'outline' : ""}>
           <motion.div 
-                 initial={{ opacity: 1, x:-100 }}
-                 animate={start ? {x:0} : ''}
+                 initial={{ opacity: 1, scale:0 }}
+                 animate={start ? {scale:1 } : ''}
                  whileHover={{ opacity: [0, 1] }}
                  className={start ? 'items' : ""}  id="contact"
                  onMouseEnter={() => {
