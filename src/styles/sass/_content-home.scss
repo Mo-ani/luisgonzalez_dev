@@ -1,0 +1,87 @@
+.content-home {
+    width:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    // letter-spacing: 0.3em;
+    display: flex;
+    flex-direction: column;
+      .outline{
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 40px;
+        width: 12.5rem;
+        height: 2.8rem;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        color: white;
+        .items{
+          border-radius: 40px;
+          font-size: 2rem;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          line-height: 2.7rem;
+          margin-right: 3px;
+          text-transform: uppercase;
+          white-space: nowrap;
+          position: relative;
+          overflow: hidden;
+          --offset: 12rem;
+          --move-initial: calc(-25% + var(--offset));
+          --move-final: calc(-50% + var(--offset));
+          .marquee__inner {
+            width: fit-content;
+            display: flex;
+            position: relative;
+            transform: translate3d(var(--move-initial), 0, 0);
+            cursor: pointer;
+            &:hover{
+              animation: marquee 1s linear infinite;
+            }
+          }
+          span{
+            width: 12.5rem;
+            padding: 0 1.1rem;
+          }
+              @keyframes marquee {
+                0% {
+                    transform: translate3d(var(--move-initial), 0, 0);
+                    opacity: 1;
+                }
+                100% {
+                      transform: translate3d(var(--move-final), 0, 0);
+                    opacity: 1;
+              }
+            }
+          }
+          #work{
+            --offset: 12.5rem;
+              --move-initial: calc(-25% + var(--offset));
+              --move-final: calc(-50% + var(--offset));
+              .marquee__inner {
+              width: fit-content;
+              display: flex;
+              position: relative;
+              transform: translate3d(var(--move-initial), 0, 0);
+  
+            }
+            span{
+              padding: 0;
+            }
+          }
+          #contact{
+            --offset: 12.5rem;
+              --move-initial: calc(-25% + var(--offset));
+              --move-final: calc(-50% + var(--offset));
+              .marquee__inner {
+              width: fit-content;
+              display: flex;
+              position: relative;
+              transform: translate3d(var(--move-initial), 0, 0);
+            }
+          }
+        }
+}
+  
+  

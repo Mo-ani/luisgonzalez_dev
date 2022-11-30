@@ -1,0 +1,34 @@
+
+.bg-show {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  .bg-hidden {
+    display: none;
+}
+
+.header-show {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img{
+            pointer-events: none;
+    }
+  }
+  
+  .header-hidden{
+    display: none;
+
+}

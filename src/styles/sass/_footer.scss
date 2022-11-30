@@ -1,0 +1,42 @@
+footer {
+    width: 100vw;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .info {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .controlers {
+            cursor: pointer;
+            font-size: 12px;
+            .on {
+                display: inline;
+                &.show {
+                    display: none;
+              }
+            }
+            .off {
+                display: none;
+                &.show {
+                    display: inline;
+              }
+            }
+          }
+        .network {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-direction: row;
+          gap: 10px;
+          a {
+            font-size: 18px;
+            color: white;
+          }
+        }
+      }
+  }

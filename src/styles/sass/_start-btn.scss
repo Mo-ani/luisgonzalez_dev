@@ -1,0 +1,25 @@
+#start-btn{
+    position: relative;
+    font-size: .6rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin: 2rem 3rem;
+    width: 110px;
+    height: 110px;
+    text-align: center;
+    line-height: 110px;
+    border: 2px gray dashed;
+    border-radius: 50%;
+    outline: 2px solid gray;
+    outline-offset: -7px;
+        &:hover {
+        border: 2px rgb(255, 255, 255) dashed;
+        border-radius: 50%;
+        outline: 2px solid rgb(255, 255, 255);
+        outline-offset: -10px;
+        transition: all 0.3s ease-out;
+        font-size: 15px;
+        cursor: pointer;
+        }
+}
+  

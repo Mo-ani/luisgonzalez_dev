@@ -1,17 +1,11 @@
 import { useAudio } from "../hooks/useAudio"
-import { useState } from "react";
 import { motion }  from 'framer-motion'
+import {Link } from 'react-router-dom';
 
 
-export const ContentSection = ({showBg, setCursorOver}) => {
 
-  const [ playing, toggle ] = useAudio( 'https://www.mboxdrive.com/signalsound.mp3' )
-  const [start, setStart] = useState(false)
+export const Menu = ({showBg, setCursorOver,start,toggle}) => {
 
-
-  const onStart = () => {
-    return {__html: start ?  `` : `<div>Start</div>`};
-  };
 
   const onAboutMe = () =>{
     return {__html: start ?  `
@@ -42,82 +36,88 @@ export const ContentSection = ({showBg, setCursorOver}) => {
       <span>Contact</span>
     </div>` : ``};
   };
-  
+
   const handleSettings = (state) =>{
-    showBg( state )
     toggle( state )
+    showBg( state )
     setCursorOver( state )
   };
 
-  
-  return (
-    <section className="content-home"> 
-      {/* start */}
 
-      <div className={start ? "" : "start-btn"} 
-      onClick={ () => {
-        setStart(!start)
-        setCursorOver( false );
-      }} 
-      onMouseEnter={() => {
-        setCursorOver( true )
-      }}
-      onMouseLeave={() => {
-        setCursorOver( false )
-      }} dangerouslySetInnerHTML={ onStart() }
-      ></div>
+  return (
+    <section className="content-home">
 
       {/* Items */}
-      <div className={start ? 'outline' : ""}>
-          <motion.div 
+      <Link 
+          className={start ? 'outline' : ""} 
+          to='/aboutme'
+          onMouseDown={ () => {
+            handleSettings(false)
+          }}
+      >
+          <motion.div
                  initial={{ opacity: 1, scale:0 }}
                  animate={start ? {scale:1 } : ''}
                  whileHover={{ opacity: [0, 1] }}
-                 className={start ? 'items' : ""}  id="about-me"
+                 className={start ? 'items' : ""}
                  onMouseEnter={() => {
                   handleSettings(true)
                 }}
-                onMouseLeave={() => {
+                onMouseLeave ={() => {
                   handleSettings(false)
-                }}  dangerouslySetInnerHTML={ onAboutMe() }>
-                
-          </motion.div>          
-      </div>
+                }}  
 
-      
-      <div className={start ? 'outline' : ""}>
-          <motion.div 
+                dangerouslySetInnerHTML={ onAboutMe() }>
+
+          </motion.div>
+      </Link>
+
+      <Link 
+          className={start ? 'outline' : ""}
+          to='/work'
+          onMouseDown={ () => {
+            handleSettings(false)
+          }}
+      >
+          <motion.div
                  initial={{ opacity: 1, scale:0 }}
                  animate={start ? {scale:1} : ''}
                  whileHover={{ opacity: [0, 1] }}
-                 className={start ? 'items' : ""} id="work"
+                 className={start ? 'items' : ""}
                  onMouseEnter={() => {
                   handleSettings(true)
                 }}
                 onMouseLeave={() => {
                   handleSettings(false)
                 }}  dangerouslySetInnerHTML={ onWork() }>
-                
+
           </motion.div>
-      </div>
-      
-      <div className={start ? 'outline' : ""}>
-          <motion.div 
+      </Link>
+
+      <Link          
+          className={start ? 'outline' : ""}
+          to='/contactme'
+          onMouseDown={ () => {
+            handleSettings(false)
+          }}
+      >
+          <motion.div
                  initial={{ opacity: 1, scale:0 }}
                  animate={start ? {scale:1 } : ''}
                  whileHover={{ opacity: [0, 1] }}
-                 className={start ? 'items' : ""}  id="contact"
+                 className={start ? 'items' : ""}
                  onMouseEnter={() => {
                   handleSettings(true)
                 }}
                 onMouseLeave={() => {
                   handleSettings(false)
                 }}  dangerouslySetInnerHTML={ onContact() }>
-                
-          </motion.div>
 
-      </div>
+          </motion.div>
+      </Link>
 
     </section>
+
+
   )
 }
