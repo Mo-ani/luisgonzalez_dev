@@ -1,22 +1,40 @@
+import { motion } from 'framer-motion';
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-
 
 
 export const AboutMe = ({setStart,setCursorOver, setToggleHeader}) => {
 
   return (
-    <div 
+    <div
         className='about-me'
         onLoad={
             useEffect(() => {
                 setStart( true )
                 setToggleHeader( false )
-              }, [])              
+              }, [])
         }
-    >  
-            <div className='content'>Contenido de la pagina</div>
-            <Link 
+    >
+
+        <motion.div
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{
+                delay: 0.2,
+                opacity: { duration: 1 },
+                default: { ease: "linear" }
+              }}
+            className='title'>
+                Hola soy luis
+                <h2 className='line'>
+                    Gonzalez
+                </h2>
+        </motion.div>
+
+
+            {/* Atras */}
+            <Link
+            className='atras'
                 to='/'
                 onMouseEnter={()=>{
                     setCursorOver(true);
@@ -32,6 +50,6 @@ export const AboutMe = ({setStart,setCursorOver, setToggleHeader}) => {
             >Atras</Link>
     </div>
 
-    
+
   )
 }

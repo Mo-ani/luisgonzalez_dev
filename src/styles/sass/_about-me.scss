@@ -1,11 +1,67 @@
+@font-face {
+    font-family: 'TuskerGrotesk';
+    src: url('../../assets/TuskerGrotesk-2500Medium.otf') format('opentype');
+  }
+@font-face {
+  font-family: 'Durk';
+  src: url('../../assets/Druk Wide Bold.ttf') format('truetype');
+}
+
+
 .about-me{
-    font-size: 3rem;
     height: 90vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    
+    justify-content: space-around;
+    .title{
+        width: 17.2rem;
+        font-family: 'TuskerGrotesk';
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: url('https://i.pinimg.com/originals/b9/43/5e/b9435e3b809f77a1a2221612962fcc11.jpg') no-repeat;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: moveBg 30s linear infinite;
+        -webkit-animation: moveBg 30s linear infinite;
+        font-size: 6rem;
+        line-height: 7rem;
+        position: relative;
+        margin-left: 11rem ;
+        .line{
+            line-height: 0.7rem;
+            letter-spacing: 0;
+            text-align: right;
+            position: absolute;
+            width: 100%;
+            height: 1rem;
+            background-color: black;
+            color: white;
+            bottom: 0.2rem;
+            left: 0rem;
+            font-family: 'Durk';
+            font-size: 0.7rem;
+        }
+    }
+    @keyframes moveBg{
+        0% {
+          background-position: 0% 30%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+    .atras{
+        position: relative;
+    }
 }
+
+@media screen and (max-width: 600px) {
+    .about-me{
+        .title{
+            margin: 0 auto;
+        }
+
+    }
+  }

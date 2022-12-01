@@ -28,9 +28,8 @@ export const WebSite = () => {
     <div className='container'>
         <Cursor cursorOver={cursorOver} />
         <img className={ showBg ? 'bg-show' : 'bg-hidden' } src="https://i.postimg.cc/tT02byd3/bg-video-OSC.gif" />
-        <header 
-            className={ toggleHeader ? 'header-show' : 'header-hidden'}
-        >
+
+        <header className={ toggleHeader ? 'header-show' : 'header-hidden'}>
             <img src="https://i.postimg.cc/mDMp1hZp/logobg.png" alt="logo" />   
         </header>
        
@@ -38,15 +37,34 @@ export const WebSite = () => {
 
         <Router>
             <Routes>
-                <Route path="/" element={<Menu  start={start} showBg={ setShowBg } setCursorOver={ setCursorOver } toggle={toggle}/>}></Route>
-                <Route path="/aboutme" element={<AboutMe setStart={setStart} setCursorOver={setCursorOver} setToggleHeader={setToggleHeader} />}></Route>
-                <Route path="/work" element={<Work setStart={setStart} setCursorOver={setCursorOver} setToggleHeader={setToggleHeader} />}></Route>
-                <Route path="/contactme" element={<Contact setStart={setStart} setCursorOver={setCursorOver} setToggleHeader={setToggleHeader} />}></Route>
+                <Route path="/" element={<Menu 
+                                            start={start}
+                                            showBg={ setShowBg } 
+                                            setCursorOver={ setCursorOver } 
+                                            setToggleHeader={setToggleHeader} 
+                                            toggle={toggle}/>}>
+                </Route>
+                <Route path="/aboutme" element={<AboutMe 
+                                                    setStart={setStart} 
+                                                    setCursorOver={setCursorOver} 
+                                                    setToggleHeader={setToggleHeader} />}>
+                </Route>
+                <Route path="/work" element={<Work 
+                                                setStart={setStart} 
+                                                setCursorOver={setCursorOver} 
+                                                setToggleHeader={setToggleHeader} />}>
+
+                </Route>
+                <Route path="/contactme" element={<Contact 
+                                                    setStart={setStart} 
+                                                    setCursorOver={setCursorOver} 
+                                                    setToggleHeader={setToggleHeader} />}>
+                </Route>
             </Routes>
         </Router>
 
         <footer>
-            <div className="welcome">welcome, im luis gonzalez</div>
+            <div className="welcome">“No es más rico quien más tiene, sino quien menos necesita” -Buda-</div>
             <div className="info">
                 <div className="controlers">
                     <span className='on'><FontAwesomeIcon icon={icons.faVolumeHigh} /></span>

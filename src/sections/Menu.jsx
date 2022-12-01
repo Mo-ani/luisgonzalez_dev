@@ -1,10 +1,10 @@
-import { useAudio } from "../hooks/useAudio"
 import { motion }  from 'framer-motion'
 import {Link } from 'react-router-dom';
+import { useEffect } from "react";
 
 
 
-export const Menu = ({showBg, setCursorOver,start,toggle}) => {
+export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader }) => {
 
 
   const onAboutMe = () =>{
@@ -45,11 +45,17 @@ export const Menu = ({showBg, setCursorOver,start,toggle}) => {
 
 
   return (
-    <section className="content-home">
+    <section className="content-home"
+    onLoad={
+      useEffect(() => {
+          setToggleHeader( true )
+        }, [])
+  }
+    >
 
       {/* Items */}
-      <Link 
-          className={start ? 'outline' : ""} 
+      <Link
+          className={start ? 'outline' : ""}
           to='/aboutme'
           onMouseDown={ () => {
             handleSettings(false)
@@ -65,14 +71,14 @@ export const Menu = ({showBg, setCursorOver,start,toggle}) => {
                 }}
                 onMouseLeave ={() => {
                   handleSettings(false)
-                }}  
+                }}
 
                 dangerouslySetInnerHTML={ onAboutMe() }>
 
           </motion.div>
       </Link>
 
-      <Link 
+      <Link
           className={start ? 'outline' : ""}
           to='/work'
           onMouseDown={ () => {
@@ -94,7 +100,7 @@ export const Menu = ({showBg, setCursorOver,start,toggle}) => {
           </motion.div>
       </Link>
 
-      <Link          
+      <Link
           className={start ? 'outline' : ""}
           to='/contactme'
           onMouseDown={ () => {
