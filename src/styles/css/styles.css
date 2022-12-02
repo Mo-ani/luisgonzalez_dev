@@ -327,7 +327,7 @@ footer .info .network a {
 }
 
 footer.absolute {
-  position: absolute;
+  position: fixed;
   bottom: 2rem;
 }
 
