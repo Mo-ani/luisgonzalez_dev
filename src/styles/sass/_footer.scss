@@ -1,7 +1,7 @@
 footer {
-    width: 100vw;
-    position: absolute;
-    bottom: 20px;
+    width: 100%;
+    position: relative;
+    bottom: -1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,4 +39,20 @@ footer {
           }
         }
       }
+  }
+
+  footer.absolute{
+    position: absolute;
+    bottom: 2rem;
+  }
+
+
+  @media screen and (max-width: 800px) {
+    footer{
+      bottom: 1rem;
+      padding: 1rem 0;
+    }
+    footer.absolute{
+      bottom: 0;
+    }
   }

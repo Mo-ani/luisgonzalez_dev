@@ -17,14 +17,15 @@
 }
 
 .header-show {
-    width: 100%;
+    position: relative;
     height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     img{
-            pointer-events: none;
+          pointer-events: none;
+          width: 20rem;
     }
   }
   

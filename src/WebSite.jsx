@@ -22,6 +22,7 @@ export const WebSite = () => {
     const [start, setStart] = useState(false)
     const [toggleHeader, setToggleHeader] = useState(true)
     const [ playing, toggle ] = useAudio( 'https://www.mboxdrive.com/signalsound.mp3' );
+    const [ footerAbsolute, setFooterAbsolute] = useState(false)
 
   return (
     
@@ -42,12 +43,14 @@ export const WebSite = () => {
                                             showBg={ setShowBg } 
                                             setCursorOver={ setCursorOver } 
                                             setToggleHeader={setToggleHeader} 
-                                            toggle={toggle}/>}>
+                                            toggle={toggle}
+                                            setFooterAbsolute={setFooterAbsolute}/>}>
                 </Route>
                 <Route path="/aboutme" element={<AboutMe 
                                                     setStart={setStart} 
                                                     setCursorOver={setCursorOver} 
-                                                    setToggleHeader={setToggleHeader} />}>
+                                                    setToggleHeader={setToggleHeader} 
+                                                    setFooterAbsolute={setFooterAbsolute}/>}>
                 </Route>
                 <Route path="/work" element={<Work 
                                                 setStart={setStart} 
@@ -63,8 +66,8 @@ export const WebSite = () => {
             </Routes>
         </Router>
 
-        <footer>
-            <div className="welcome">“No es más rico quien más tiene, sino quien menos necesita” -Buda-</div>
+        <footer className={footerAbsolute ? 'absolute': ''}>
+            <div className="welcome">“sino quien menos necesita” -Buda-</div>
             <div className="info">
                 <div className="controlers">
                     <span className='on'><FontAwesomeIcon icon={icons.faVolumeHigh} /></span>

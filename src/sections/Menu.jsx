@@ -1,10 +1,11 @@
-import { motion }  from 'framer-motion'
-import {Link } from 'react-router-dom';
 import { useEffect } from "react";
+import { AboutMeItem } from '../components/AboutMeItem';
+import { WorkItem } from '../components/WorkItem';
+import { ContactMeItem } from '../components/ContactMeItem';
 
 
 
-export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader }) => {
+export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader,setFooterAbsolute }) => {
 
 
   const onAboutMe = () =>{
@@ -49,78 +50,17 @@ export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader }) => 
     onLoad={
       useEffect(() => {
           setToggleHeader( true )
+          setFooterAbsolute( true )
         }, [])
   }
     >
 
       {/* Items */}
-      <Link
-          className={start ? 'outline' : ""}
-          to='/aboutme'
-          onMouseDown={ () => {
-            handleSettings(false)
-          }}
-      >
-          <motion.div
-                 initial={{ opacity: 1, scale:0 }}
-                 animate={start ? {scale:1 } : ''}
-                 whileHover={{ opacity: [0, 1] }}
-                 className={start ? 'items' : ""}
-                 onMouseEnter={() => {
-                  handleSettings(true)
-                }}
-                onMouseLeave ={() => {
-                  handleSettings(false)
-                }}
+      <AboutMeItem start={start} handleSettings={handleSettings} onAboutMe={onAboutMe}/>
 
-                dangerouslySetInnerHTML={ onAboutMe() }>
+      <WorkItem start={start} handleSettings={handleSettings} onWork={onWork}/>
 
-          </motion.div>
-      </Link>
-
-      <Link
-          className={start ? 'outline' : ""}
-          to='/work'
-          onMouseDown={ () => {
-            handleSettings(false)
-          }}
-      >
-          <motion.div
-                 initial={{ opacity: 1, scale:0 }}
-                 animate={start ? {scale:1} : ''}
-                 whileHover={{ opacity: [0, 1] }}
-                 className={start ? 'items' : ""}
-                 onMouseEnter={() => {
-                  handleSettings(true)
-                }}
-                onMouseLeave={() => {
-                  handleSettings(false)
-                }}  dangerouslySetInnerHTML={ onWork() }>
-
-          </motion.div>
-      </Link>
-
-      <Link
-          className={start ? 'outline' : ""}
-          to='/contactme'
-          onMouseDown={ () => {
-            handleSettings(false)
-          }}
-      >
-          <motion.div
-                 initial={{ opacity: 1, scale:0 }}
-                 animate={start ? {scale:1 } : ''}
-                 whileHover={{ opacity: [0, 1] }}
-                 className={start ? 'items' : ""}
-                 onMouseEnter={() => {
-                  handleSettings(true)
-                }}
-                onMouseLeave={() => {
-                  handleSettings(false)
-                }}  dangerouslySetInnerHTML={ onContact() }>
-
-          </motion.div>
-      </Link>
+      <ContactMeItem start={start} handleSettings={handleSettings} onContact={onContact}/>
 
     </section>
 

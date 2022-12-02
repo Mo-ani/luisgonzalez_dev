@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
 
-export const AboutMe = ({setStart,setCursorOver, setToggleHeader}) => {
+export const AboutMe = ({setStart,setCursorOver, setToggleHeader,setFooterAbsolute}) => {
 
   return (
     <div
@@ -12,28 +12,45 @@ export const AboutMe = ({setStart,setCursorOver, setToggleHeader}) => {
             useEffect(() => {
                 setStart( true )
                 setToggleHeader( false )
+                setFooterAbsolute( false )
               }, [])
         }
     >
+        <div className='content-main'>
+            <div className='info'>
 
-        <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{
-                delay: 0.2,
-                opacity: { duration: 1 },
-                default: { ease: "linear" }
-              }}
-            className='title'>
-                Hola soy luis
-                <h2 className='line'>
-                    Gonzalez
-                </h2>
-        </motion.div>
+                <motion.div
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    transition={{
+                        delay: 0.2,
+                        opacity: { duration: 1 },
+                        default: { ease: "linear" }
+                    }}
+                    className='title'>
+                        Hola soy luis
+                        <h2 className='line'>
+                            Gonzalez
+                        </h2>
+                </motion.div>
+
+                <div className='description'> I USE MY PASSION AND SKILLS
+                    TO CREATE DIGITAL PRODUCTS AND
+                    EXPERIENCES. NATIONAL AND
+                    INTERNATIONAL CUSTOMERS RELY ON
+                    ME FOR DESIGN, IMPLEMENTATION, AND
+                    MANAGEMENT OF THEIR DIGITAL
+                    </div>
+                </div>
+            
+            <div className='graphic'>
+
+            </div>
+        </div>
 
 
             {/* Atras */}
-            <Link
+            {/* <Link
             className='atras'
                 to='/'
                 onMouseEnter={()=>{
@@ -47,7 +64,7 @@ export const AboutMe = ({setStart,setCursorOver, setToggleHeader}) => {
                     setToggleHeader( true )
                     setCursorOver(false);
                 }}
-            >Atras</Link>
+            >Atras</Link> */}
     </div>
 
 
