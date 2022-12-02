@@ -36,6 +36,7 @@ export const WebSite = () => {
        
         <Start start={start} setStart={setStart} setCursorOver={ setCursorOver }/>
 
+        <Router>
             <Routes>
                 <Route path="/" element={<Menu 
                                             start={start}
@@ -58,7 +59,7 @@ export const WebSite = () => {
                                                     setCursorOver={setCursorOver} 
                                                     setToggleHeader={setToggleHeader} />}/>
             </Routes>
-
+        </Router>
 
         <footer className={footerAbsolute ? 'absolute': ''}>
             <div className="welcome">“sino quien menos necesita” -Buda-</div>
