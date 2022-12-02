@@ -7,8 +7,6 @@ import './styles/css/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <Router>
-        <WebSite />
-      </Router>
+    <WebSite />
   </React.StrictMode>
 )
