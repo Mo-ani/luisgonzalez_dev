@@ -35,7 +35,13 @@ export const WebSite = () => {
         </header>
        
         <Start start={start} setStart={setStart} setCursorOver={ setCursorOver }/>
-
+        <Menu 
+                                            start={start}
+                                            showBg={ setShowBg } 
+                                            setCursorOver={ setCursorOver } 
+                                            setToggleHeader={setToggleHeader} 
+                                            toggle={toggle}
+                                            setFooterAbsolute={setFooterAbsolute}/>
         <Router>
             <Routes>
                 <Route path="/" element={<Menu 
