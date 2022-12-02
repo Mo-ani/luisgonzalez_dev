@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as fab from '@fortawesome/free-brands-svg-icons';
@@ -36,7 +36,6 @@ export const WebSite = () => {
        
         <Start start={start} setStart={setStart} setCursorOver={ setCursorOver }/>
 
-        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Menu 
                                             start={start}
@@ -59,7 +58,6 @@ export const WebSite = () => {
                                                     setCursorOver={setCursorOver} 
                                                     setToggleHeader={setToggleHeader} />}/>
             </Routes>
-        </BrowserRouter>
 
         <footer className={footerAbsolute ? 'absolute': ''}>
             <div className="welcome">“sino quien menos necesita” -Buda-</div>
