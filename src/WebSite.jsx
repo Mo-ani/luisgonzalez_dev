@@ -36,35 +36,29 @@ export const WebSite = () => {
        
         <Start start={start} setStart={setStart} setCursorOver={ setCursorOver }/>
 
-        <Router>
             <Routes>
-                <Route exact path="/" element={<Menu 
+                <Route path="/" element={<Menu 
                                             start={start}
                                             showBg={ setShowBg } 
                                             setCursorOver={ setCursorOver } 
                                             setToggleHeader={setToggleHeader} 
                                             toggle={toggle}
-                                            setFooterAbsolute={setFooterAbsolute}/>}>
-                </Route>
+                                            setFooterAbsolute={setFooterAbsolute}/>} />
                 <Route path="/aboutme" element={<AboutMe 
                                                     setStart={setStart} 
                                                     setCursorOver={setCursorOver} 
                                                     setToggleHeader={setToggleHeader} 
-                                                    setFooterAbsolute={setFooterAbsolute}/>}>
-                </Route>
+                                                    setFooterAbsolute={setFooterAbsolute}/>}/>
                 <Route path="/work" element={<Work 
                                                 setStart={setStart} 
                                                 setCursorOver={setCursorOver} 
-                                                setToggleHeader={setToggleHeader} />}>
-
-                </Route>
+                                                setToggleHeader={setToggleHeader} />}/>
                 <Route path="/contactme" element={<Contact 
                                                     setStart={setStart} 
                                                     setCursorOver={setCursorOver} 
-                                                    setToggleHeader={setToggleHeader} />}>
-                </Route>
+                                                    setToggleHeader={setToggleHeader} />}/>
             </Routes>
-        </Router>
+
 
         <footer className={footerAbsolute ? 'absolute': ''}>
             <div className="welcome">“sino quien menos necesita” -Buda-</div>
