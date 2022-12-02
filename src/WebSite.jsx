@@ -13,6 +13,7 @@ import { Contact } from './sections/Contact';
 import { Cursor } from './components/Cursor';
 import { Start } from './components/Start';
 import { useAudio } from './hooks/useAudio';
+import { UseWindowSize } from './hooks/UseWindowSize';
 
 
 //Probando comentarios
@@ -23,6 +24,7 @@ export const WebSite = () => {
     const [toggleHeader, setToggleHeader] = useState(true)
     const [ playing, toggle ] = useAudio( 'https://www.mboxdrive.com/signalsound.mp3' );
     const [ footerAbsolute, setFooterAbsolute] = useState(false)
+
 
   return (
     

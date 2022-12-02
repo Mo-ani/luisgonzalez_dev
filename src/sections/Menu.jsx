@@ -2,10 +2,13 @@ import { useEffect } from "react";
 import { AboutMeItem } from '../components/AboutMeItem';
 import { WorkItem } from '../components/WorkItem';
 import { ContactMeItem } from '../components/ContactMeItem';
+import { UseWindowSize } from "../hooks/UseWindowSize";
 
 
 
 export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader,setFooterAbsolute }) => {
+  
+  const [width, height] = UseWindowSize() 
 
 
   const onAboutMe = () =>{
@@ -39,9 +42,9 @@ export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader,setFoo
   };
 
   const handleSettings = (state) =>{
-    toggle( state )
-    showBg( state )
-    setCursorOver( state )
+    width < 900 ? toggle(false) : toggle( state ) 
+    width < 900 ? showBg(false) : showBg( state )
+    width < 900 ? setCursorOver(false) : setCursorOver( state )
   };
 
 

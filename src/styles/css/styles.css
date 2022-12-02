@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 html {
@@ -19,7 +20,6 @@ body {
   font-size: 10px;
   line-height: 16px;
   letter-spacing: 0.07em;
-  user-select: none;
 }
 body .container {
   height: 100vh;
@@ -28,6 +28,17 @@ body .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+::selection {
+  color: none;
+  background: none;
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+  color: none;
+  background: none;
 }
 
 .bg-show {
@@ -105,6 +116,24 @@ body .container {
   margin-bottom: 1rem;
   text-decoration: none;
   color: white;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.content-home .outline::selection {
+  color: none;
+  background: none;
+}
+.content-home .outline::-moz-selection {
+  color: none;
+  background: none;
+}
+.content-home .outline:focus {
+  outline: none !important;
 }
 .content-home .outline .items {
   border-radius: 40px;
@@ -286,7 +315,7 @@ body .container {
 footer {
   width: 100%;
   position: relative;
-  bottom: -1rem;
+  bottom: 0.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -365,6 +394,9 @@ footer.absolute {
   opacity: 0;
   outline: 0px;
   transition: width 0.1s ease-out, height 0.1s ease-out, opacity 0.5s;
+}
+.cursor.mobile {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
