@@ -6,7 +6,7 @@ import { UseWindowSize } from "../hooks/UseWindowSize";
 
 
 
-export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader,setFooterAbsolute }) => {
+export const Menu = ({ setCursorOver,setToggleHeader,setFooterAbsolute,start,toggle,showBg }) => {
   
   const [width, height] = UseWindowSize() 
 
@@ -59,11 +59,11 @@ export const Menu = ({ showBg, setCursorOver,start,toggle,setToggleHeader,setFoo
     >
 
       {/* Items */}
-      <AboutMeItem start={start} handleSettings={handleSettings} onAboutMe={onAboutMe}/>
+      <AboutMeItem start={start} handleSettings={handleSettings} setToggleHeader={setToggleHeader} onAboutMe={onAboutMe}/>
 
-      <WorkItem start={start} handleSettings={handleSettings} onWork={onWork}/>
+      <WorkItem start={start} handleSettings={handleSettings} setToggleHeader={setToggleHeader} onWork={onWork}/>
 
-      <ContactMeItem start={start} handleSettings={handleSettings} onContact={onContact}/>
+      <ContactMeItem start={start} handleSettings={handleSettings} setToggleHeader={setToggleHeader} onContact={onContact}/>
 
     </section>
 

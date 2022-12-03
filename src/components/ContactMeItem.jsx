@@ -2,7 +2,7 @@ import React from 'react'
 import {Link } from 'react-router-dom';
 import { motion }  from 'framer-motion';
 
-export const ContactMeItem = ({start,handleSettings,onContact}) => {
+export const ContactMeItem = ({start,handleSettings,onContact,setToggleHeader}) => {
   return (
         <Link
             className={start ? 'outline' : ""}
@@ -21,7 +21,11 @@ export const ContactMeItem = ({start,handleSettings,onContact}) => {
                   }}
                   onMouseLeave={() => {
                     handleSettings(false)
-                  }}  dangerouslySetInnerHTML={ onContact() }>
+                  }} 
+                  onClick={() => {
+                    setToggleHeader( false )
+                  }}
+                  dangerouslySetInnerHTML={ onContact() }>
                 
             </motion.div>
         </Link>

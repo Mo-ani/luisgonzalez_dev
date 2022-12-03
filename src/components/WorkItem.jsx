@@ -2,7 +2,7 @@ import React from 'react'
 import { motion }  from 'framer-motion'
 import {Link } from 'react-router-dom';
 
-export const WorkItem = ({start,handleSettings,onWork}) => {
+export const WorkItem = ({start,handleSettings,onWork,setToggleHeader}) => {
   return (
         <Link
             className={start ? 'outline' : ""}
@@ -21,7 +21,11 @@ export const WorkItem = ({start,handleSettings,onWork}) => {
                   }}
                   onMouseLeave={() => {
                     handleSettings(false)
-                  }}  dangerouslySetInnerHTML={ onWork() }>
+                  }}  
+                  onClick={() => {
+                    setToggleHeader( false )
+                  }}
+                  dangerouslySetInnerHTML={ onWork() }>
                 
             </motion.div>
         </Link>

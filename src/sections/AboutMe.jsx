@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
 
 
-export const AboutMe = ({setStart,setCursorOver, setToggleHeader,setFooterAbsolute}) => {
+
+export const AboutMe = ({setStart,setCursorOver,setFooterAbsolute,setToggleHeader}) => {
 
   return (
     <div
@@ -11,8 +11,8 @@ export const AboutMe = ({setStart,setCursorOver, setToggleHeader,setFooterAbsolu
         onLoad={
             useEffect(() => {
                 setStart( true )
-                setToggleHeader( false )
                 setFooterAbsolute( false )
+                setToggleHeader(false)
               }, [])
         }
     >

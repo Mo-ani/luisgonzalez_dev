@@ -2,7 +2,7 @@ import React from 'react'
 import { motion }  from 'framer-motion'
 import {Link } from 'react-router-dom';
 
-export const AboutMeItem = ({start,handleSettings,onAboutMe}) => {
+export const AboutMeItem = ({start,handleSettings,onAboutMe, setToggleHeader}) => {
   return (
         <Link
             className={start ? 'outline' : ""}
@@ -22,7 +22,9 @@ export const AboutMeItem = ({start,handleSettings,onAboutMe}) => {
                   onMouseLeave ={() => {
                     handleSettings(false)
                   }}
-              
+                  onClick={() => {
+                    setToggleHeader( false )
+                  }}
                   dangerouslySetInnerHTML={ onAboutMe() }>
                 
             </motion.div>
