@@ -8,9 +8,9 @@
     height: 110px;
     text-align: center;
     line-height: 110px;
-    border: 2px gray dashed;
+    border: 2px rgb(255, 255, 255) dashed;
     border-radius: 50%;
-    outline: 2px solid gray;
+    outline: 2px solid rgb(255, 255, 255);
     outline-offset: -7px;
         &:hover {
         border: 2px rgb(255, 255, 255) dashed;

@@ -6,6 +6,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    background-color: black;
     .info {
         width: 90%;
         display: flex;
@@ -44,6 +45,7 @@ footer {
   footer.absolute{
     position: fixed;
     bottom: 2rem;
+    background-color: transparent;
   }
 
 
@@ -53,6 +55,17 @@ footer {
       padding: 1rem 0;
     }
     footer.absolute{
+      bottom: 0;
+    }
+  }
+
+  @media screen and (max-height: 500px) {
+    footer{
+      bottom: 1rem;
+      padding: 1rem 0;
+    }
+    footer.absolute{
+      position: relative;
       bottom: 0;
     }
   }

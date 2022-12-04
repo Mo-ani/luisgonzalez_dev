@@ -21,7 +21,7 @@ export const Cursor = ({cursorOver}) => {
   return (
     <div className={ isDown ? 'cursor click' : 
                     cursorOver ? 'cursor hover' : 
-                    width < 900 ? 'cursor mobile' : 'cursor'}  
+                    width < 900 || height < 500 ? 'cursor mobile' : 'cursor'}  
         style={{left: clientX, top: clientY,
                  transform: "translate(-50%, -50%)",}}>   
     </div>

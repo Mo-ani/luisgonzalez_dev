@@ -41,6 +41,8 @@ export const Menu = ({ setCursorOver,setToggleHeader,setFooterAbsolute,start,tog
     </div>` : ``};
   };
 
+
+
   const handleSettings = (state) =>{
     width < 900 ? toggle(false) : toggle( state ) 
     width < 900 ? showBg(false) : showBg( state )
@@ -50,12 +52,15 @@ export const Menu = ({ setCursorOver,setToggleHeader,setFooterAbsolute,start,tog
 
   return (
     <section className="content-home"
-    onLoad={
+    onLoad={ 
+
+   
       useEffect(() => {
           setToggleHeader( true )
-          setFooterAbsolute( true )
+          setFooterAbsolute( true ) 
         }, [])
-  }
+
+    }
     >
 
       {/* Items */}

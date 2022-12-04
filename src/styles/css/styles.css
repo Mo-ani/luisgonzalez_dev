@@ -85,9 +85,9 @@ body .container {
   height: 110px;
   text-align: center;
   line-height: 110px;
-  border: 2px gray dashed;
+  border: 2px rgb(255, 255, 255) dashed;
   border-radius: 50%;
-  outline: 2px solid gray;
+  outline: 2px solid rgb(255, 255, 255);
   outline-offset: -7px;
 }
 #start-btn:hover {
@@ -219,6 +219,7 @@ body .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: black;
 }
 .about-me .content-main {
   display: flex;
@@ -313,6 +314,30 @@ body .container {
     margin: 2rem auto;
   }
 }
+@media screen and (max-height: 600px) {
+  .about-me {
+    height: auto;
+  }
+  .about-me .content-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-me .content-main .info {
+    margin-top: 2rem;
+  }
+  .about-me .content-main .info .title {
+    margin-left: 0;
+  }
+  .about-me .content-main .info .description {
+    margin-left: 0;
+    width: 18rem;
+  }
+  .about-me .content-main .graphic {
+    width: 90%;
+    margin: 2rem auto;
+  }
+}
 footer {
   width: 100%;
   position: relative;
@@ -321,6 +346,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  background-color: black;
 }
 footer .info {
   width: 90%;
@@ -359,6 +385,7 @@ footer .info .network a {
 footer.absolute {
   position: fixed;
   bottom: 2rem;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 800px) {
@@ -367,6 +394,16 @@ footer.absolute {
     padding: 1rem 0;
   }
   footer.absolute {
+    bottom: 0;
+  }
+}
+@media screen and (max-height: 500px) {
+  footer {
+    bottom: 1rem;
+    padding: 1rem 0;
+  }
+  footer.absolute {
+    position: relative;
     bottom: 0;
   }
 }

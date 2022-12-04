@@ -16,6 +16,7 @@ export const ContactMeItem = ({start,handleSettings,onContact,setToggleHeader}) 
                    animate={start ? {scale:1 } : ''}
                    whileHover={{ opacity: [0, 1] }}
                    className={start ? 'items' : ""}
+                   id='contact'
                    onMouseEnter={() => {
                     handleSettings(true)
                   }}

@@ -16,6 +16,7 @@ export const WorkItem = ({start,handleSettings,onWork,setToggleHeader}) => {
                    animate={start ? {scale:1} : ''}
                    whileHover={{ opacity: [0, 1] }}
                    className={start ? 'items' : ""}
+                   id='work'
                    onMouseEnter={() => {
                     handleSettings(true)
                   }}

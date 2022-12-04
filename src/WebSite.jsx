@@ -24,13 +24,14 @@ export const WebSite = () => {
     const [toggleHeader, setToggleHeader] = useState(true)
     const [ playing, toggle ] = useAudio( 'https://www.mboxdrive.com/signalsound.mp3' );
     const [ footerAbsolute, setFooterAbsolute] = useState(false)
+    const [width, height] = UseWindowSize() 
 
 
   return (
     
     <div className='container'>
         <Cursor cursorOver={cursorOver} />
-        <img className={ showBg ? 'bg-show' : 'bg-hidden' } src="https://i.postimg.cc/tT02byd3/bg-video-OSC.gif" />
+        <img className={ showBg || width < 900 ? 'bg-show' : 'bg-hidden' } src="https://i.postimg.cc/tT02byd3/bg-video-OSC.gif" />
 
         <header className={ toggleHeader ? 'header-show' : 'header-hidden'}>
             <img src="https://i.postimg.cc/mDMp1hZp/logobg.png" alt="logo" />   
