@@ -65,14 +65,7 @@ export const WebSite = () => {
                                                     setToggleHeader={setToggleHeader} />}/>
             </Routes>
         </Router>
-        <motion.footer 
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        transition={{
-            delay: 0.2,
-            opacity: { duration: 1 },
-        }}
-        className={footerAbsolute ? 'absolute': ''}>
+        <footer className={footerAbsolute ? 'absolute': ''}>
             <div className="welcome">“sino quien menos necesita” -Buda-</div>
             <div className="info">
                 <div className="controlers">
@@ -86,7 +79,7 @@ export const WebSite = () => {
                     <a href="#"><FontAwesomeIcon icon={fab.faTwitter} /></a>
                 </div>
             </div>
-        </motion.footer>
+        </footer>
     </div>
 
 
