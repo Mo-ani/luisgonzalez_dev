@@ -68,6 +68,10 @@ export const WebSite = () => {
         <motion.footer 
         initial={{opacity:0}}
         animate={{opacity:1}}
+        transition={{
+            delay: 0.2,
+            opacity: { duration: 1 },
+        }}
         className={footerAbsolute ? 'absolute': ''}>
             <div className="welcome">“sino quien menos necesita” -Buda-</div>
             <div className="info">
