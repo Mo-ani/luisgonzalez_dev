@@ -12,8 +12,11 @@ import { Contact } from './sections/Contact';
 
 import { Cursor } from './components/Cursor';
 import { Start } from './components/Start';
+
 import { useAudio } from './hooks/useAudio';
 import { UseWindowSize } from './hooks/UseWindowSize';
+
+import { motion } from 'framer-motion';
 
 
 //Probando comentarios
@@ -62,7 +65,10 @@ export const WebSite = () => {
                                                     setToggleHeader={setToggleHeader} />}/>
             </Routes>
         </Router>
-        <footer className={footerAbsolute ? 'absolute': ''}>
+        <motion.footer 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        className={footerAbsolute ? 'absolute': ''}>
             <div className="welcome">“sino quien menos necesita” -Buda-</div>
             <div className="info">
                 <div className="controlers">
@@ -76,7 +82,7 @@ export const WebSite = () => {
                     <a href="#"><FontAwesomeIcon icon={fab.faTwitter} /></a>
                 </div>
             </div>
-        </footer>
+        </motion.footer>
     </div>
 
 
